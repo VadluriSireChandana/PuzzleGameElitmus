@@ -18,7 +18,7 @@ and the number of hints taken by the user at each step in order to solve a solut
 - Hints Provided for each puzzle : 3
 - Number of solutions:1
       
-   #### Skills Assessed :
+ ### Soft Skills to be assessed :
 - Visusal Spacial Awareness
 - Eye Capturing
 - Perseverence
@@ -31,7 +31,7 @@ and the number of hints taken by the user at each step in order to solve a solut
   - No.of answers for each question is 1.
   - Based on the below skills the user will be awarded with the rewards.
   
-## Soft skill to be assesed
+### Soft skill to be assesed :
   - Problem-solving
   - Attention to detail
   - Memory Retention 
