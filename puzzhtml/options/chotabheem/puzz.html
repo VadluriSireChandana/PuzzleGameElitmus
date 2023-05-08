@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajini</title>
+    <link rel="stylesheet" href="/jquery/jquery-ui.css">
+    <style>
+        .image {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 10%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.image img {
+  max-width: 80%;
+  max-height: 80%;
+}
+	body{margin:auto;}
+        #puzzle{width:600px;margin:auto;}
+        .tile{
+            background-image:url('chotabheem.jpg');
+            width:200px;
+            height:200px;
+            float:left;
+            border:1px solid silver;
+            box-sizing:border-box;
+        }
+        #tile1 { background-position:0 0 }
+        #tile2 { background-position:-200px -0px }
+        #tile3 { background-position:-400px -0px }
+        #tile4 { background-position:-0 -200px }
+        #tile5 { background-position:-200px -200px }
+        #tile6 { background-position:-400px -200px }
+        #tile7 { background-position:-0 -400px }
+        #tile8 { background-position:-200px -400px }
+        #tile9 { background-position:-400px -400px }
+		
+		#popup{position:absolute;width:100%;
+background:rgba(0,0,0,0.5);top:25%;
+text-align:center;color:#fff;padding:20px;}
+    </style>
+</head>
+<body>
+    <div id="puzzle" class="sortable">
+        <div id='tile1' class='tile'></div>
+        <div id='tile2' class='tile'></div>
+        <div id='tile3' class='tile'></div>
+        <div id='tile4' class='tile'></div>
+        <div id='tile5' class='tile'></div>
+        <div id='tile6' class='tile'></div>
+        <div id='tile7' class='tile'></div>
+        <div id='tile8' class='tile'></div>
+        <div id='tile9' class='tile'></div>
+    </div>
+	
+	<div id='popup' style='display:block;'>
+<div id='message'>
+<h1></div><br/><br/>
+<button id='startBtn' style='display:inline;' onclick="shuffle()">Start</button><br/><br/>
+</div>
+    <h1 style="position:absolute;top:70%;right:90%;padding:10px;" id='timer'></h1>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
+	
+	<!-- <script src="jquery/touch-dnd.js"></script> -->
+    <script>
+        var sec=0;
+        let timer;
+        function goback(){
+            window.location.href="../opt.html";
+        }
+        function shuffle() {
+			$( "#popup" ).hide('');
+			$('#startBtn').hide();
+            let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            array.sort(function(a, b){return 0.5 - Math.random()});
+            
+            $('#puzzle').html('');
+            for (var i = 0; i < array.length; i++) {
+                $( "#puzzle" ).append("<div id='tile"+array[i]+"' class='tile'></div>");
+            }
+            
+            sec=0;
+            timer = setInterval(function(){ 
+                sec=sec+1;
+                $( "#timer" ).html(sec);
+            }, 1000);
+        }
+        var mov=0;
+        $( ".sortable" ).sortable({connectWith: ".sortable"},
+        {
+         
+            update: function( event, ui ) {
+                countRight=0;
+                $("#puzzle > div").each((index, elem) => {
+                if('tile'+(index+1)==elem.id){
+                    countRight=countRight+1;
+                    mov=mov+1;
+                }
+                if(countRight==9)
+                {
+                    let completedin=sec;
+                    sec=0;
+                    clearInterval(timer);
+                    $( "#timer" ).html('');
+					$('#startBtn').show();
+					$( "#popup" ).show();
+                    if(completedin<50){
+                        $( "#message" ).html("<h3>Your skill <br> Hand to eye co-ordination rates 😎 <h2>"+(100-completedin)+"%   </h2> </h3><h3>Eye Capturing 👓👁‍🗨 <h2>"+(100-completedin-(mov/4))+"%    </h2> </h3></h2> </h3><h3>visual spacial awareness : <h2>"+(100-completedin-(mov/2))+"%    </h2> </h3><h2>👏Congratulations !</h2><h1></h1> You have solved the puzzle in "+completedin+" seconds "+mov+" number of moves");
+              }
+              else{
+                $( "#message" ).html("<h3>Your skill <br> Hand to eye co-ordination rates<br><br>Eye Capturing<br><br>visual spacial awareness are rated below 6 Better luck next time 👍🏻👍🏻<h2>Not up to he mark"+(100-completedin-(mov/2))+"%   </h2> </h3>");
+              }
+              $("#message").show();
+                }
+            });
+            }
+            
+        });
+        var step=0;
+        function displayImage() {
+  var image = document.getElementById("myImage");
+  var container = document.querySelector(".container");
+  if (image.style.display === "none") {
+    image.style.display = "block";
+    container.classList.add("blur");
+  } else {
+    image.style.display = "none";
+    container.classList.remove("blur");
+  }
+  step=step+1;
+}
+  function displayImage1() {
+  var image = document.getElementById("myImage1");
+  var container = document.querySelector(".container");
+  if (image.style.display === "none") {
+    image.style.display = "block";
+    container.classList.add("blur");
+  } else {
+    image.style.display = "none";
+    container.classList.remove("blur");
+  }
+  step=step+1;
+}
+  function displayImage2() {
+  var image = document.getElementById("myImage2");
+  var container = document.querySelector(".container");
+  if (image.style.display === "none") {
+    image.style.display = "block";
+    container.classList.add("blur");
+  } else {
+    image.style.display = "none";
+    container.classList.remove("blur");
+  }
+  step=step+1;
+}
+       
+		    $("#sortable").disableSelection();
+        document.write("<html><head><center> <b> Hints </b></head>");
+          document.write("<html><head><center> ** Click again on the hint button to close the hint ** </head>");
+        document.write("<br><br><button onclick='displayImage()'>Get Hint 1</button>");
+        document.write("<br><br><div id='myImage' class='image'><img src='./hint1.jpg' alt='popup image'></div>");
+        document.write("<br><br><button onclick='displayImage1()'>Get Hint 2</button>");
+        document.write("<br><br><div id='myImage1' class='image'><img src='./hint2.jpg' alt='popup image'></div>");
+        document.write("<br><br><button onclick='displayImage2()'>Get Hint 3</button>");
+        document.write("<br><br><div id='myImage2' class='image'><img src='./hint3.jpg' alt='popup image'></div>");
+        document.write("<br><br></center></html>");
+        document.write("<html><b><center>Your Skills Accessed Here Are :::  ");
+        document.write("<br><br>Perseverence")
+        document.write("<br><br>Eye Capturing");
+        document.write("<br><br>Hand to eye co-ordination");
+        document.write("<br><br>visual spacial awareness</center></b></html>");
+        document.write("<html><b><center> <br><br><br><input type='submit' value='RESTART' onclick='shuffle()'/></b></center></html>");
+        document.write("<html><b><center> <br><br><br><input type='submit' value='QUIT' onclick='goback()'/></b></center></html>");
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Kevin's Kwiz!</title>
+<link href ="mov.css" rel ="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src = "mov.js"></script>
+
+</head>
+<body>
+
+<form id = "quiz" name = "quiz">
+
+
+<p class = "questions">What is the capital of Rhode Island?</p>
+<input id = "textbox" type = "text" name = "question1">
+<input type="button" value="hint " onclick="show()">
+<p class = "questions">I have blades but I’m not a knife. Want to cool down? Give me a whirl.</p>
+<input id = "textbox1" type = "text" name = "question4">
+<input type="button" value="hint " onclick="show1()">
+
+<p class = "questions">What is the capital of Connecticut?</p>
+<input type = "radio" id = "mc" name = "question2" value = "Hartford"> Hartford<br>
+<input type = "radio" id = "mc" name = "question2" value = "Heartford"> Heartford<br>
+
+<p class = "questions">What is the capital of New York?</p>
+
+<input type = "radio" id = "mc" name = "question3" value = "Albany"> Albany<br>
+<input type = "radio" id = "mc" name = "question3" value = "All Benny's"> All Benny's<br>
+   
+<input id = "button"  type = "button" value = "I'm finished!" onclick = "check();">
+<input id = "button1" type = "button" value = " Quit " onclick="check1()">
+
+</form>
+
+<div id = "after_submit">
+<p id = "number_correct"></p>
+<p id = "message"></p>
+<img id = "picture">
+</div>
+<script>
+    function show(){
+       alert("I am a company tooo!!😉")
+    }
+    function show1(){
+        alert("usually i am in every house!!");
+    }
+</script>
+</html>
+</body>

@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="full-page">
+        <div class="sub-page">
+            <div class="navigation-bar">
+                <div class="logo">
+                    <h1>P U Z Z L E</h1>
+                    <h2>You can Asses your skills here !! All the best !!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <div class="form-box">
+                        <div class="form">
+                            <form class="login-form" id="login-form" >                    
+                    <center>
+                        <h1 class="main-heading">Login Form</h1></center>
+				                <input type="text"placeholder="user name" id="uname" name="username" required/>
+				                <input type="password"placeholder="password" id="password" name="password" required/>
+				                <input style="background-color: rgb(231, 111, 31); color: white; border-radius: 5px;" type="submit" value="LOGIN">
+				                <p class="message">Not Registered? <a href="#">Register</a></p>
+				            </form>
+                            <form class="register-form" id="registration-form">
+                                <center><h1 class="main-heading">Registration Form</h1></center>
+				                <input type="text" placeholder="user name" id="new-username" required/>
+				                <input type="text" placeholder="email-id"  required/>
+				                <input type="password" placeholder="password"id="new-password" required/>
+				                <button>REGISTER</button>
+				                <p class="message">Already Registered?<a href="#">Login</a>
+				                </p>
+				            </form>
+			             </div>
+	                </div>
+                </div>
+                <div class="col-1">
+                    <p class='defination'>Solve the Puzzles<br>Boost up your skills<br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'>
+    </script>
+    <script>
+     
+       $('.message a').click(function(){$('form').animate({height: "toggle",opacity: "toggle"},"slow");});
+       const validUsers = { "siri": "siri", "chandu": "chandu" };
+
+const loginForm = document.getElementById("login-form");
+
+loginForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const username = document.getElementById("uname").value;
+  const password = document.getElementById("password").value;
+
+  if (validUsers[username] === password) {
+    window.location.href = "./puzzhtml/options/opt.html";
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+});
+
+const registrationForm = document.getElementById("registration-form");
+
+      registrationForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const newUsername = document.getElementById("new-username").value;
+        const newPassword = document.getElementById("new-password").value;
+
+        validUsers[newUsername] = newPassword;
+
+        alert(`User ${newUsername} has been registered with password ${newPassword}.`);
+
+        registrationForm.reset();
+      });
+    </script>
+</body>
+</html>
