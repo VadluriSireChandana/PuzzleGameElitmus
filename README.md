@@ -49,6 +49,7 @@ and the number of hints taken by the user at each step in order to solve a solut
 ## Game Link
   This website is available on ----
   https://elitmuspuzzlegames.netlify.app/
+  https://vadlurisirechandana.github.io/PuzzleGameElitmus/
   
   
 ### How to setup the project
