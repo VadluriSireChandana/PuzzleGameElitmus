@@ -64,8 +64,9 @@ loginForm.addEventListener("submit", function(event) {
   if (validUsers[username] === password) {
     window.location.href = "./puzzhtml/options/opt.html";
   } else {
-   } alert("Invalid username or password. Please try again.");
+    alert("Invalid username or password. Please try again.");
   }
+}
 });
 
 const registrationForm = document.getElementById("registration-form");
