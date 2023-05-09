@@ -10,7 +10,7 @@
             <div class="navigation-bar">
                 <div class="logo">
                     <h1>P U Z Z L E</h1>
-                    <h2>You can Asses your skills here !! All the best !!</h2>
+                    <h2>You can Assess your skills here !! All the best !!</h2>
                 </div>
             </div>
             <div class="row">
@@ -20,7 +20,7 @@
                             <form class="login-form" id="login-form" >                    
                     <center>
                         <h1 class="main-heading">Login Form</h1></center>
-				                <input type="text"placeholder="user name" id="uname" name="username" required/>
+				                <input type="email"placeholder="Email_ID" id="uname" name="username" required/>
 				                <input type="password"placeholder="password" id="password" name="password" required/>
 				                <input style="background-color: rgb(231, 111, 31); color: white; border-radius: 5px;" type="submit" value="LOGIN">
 				                <p class="message">Not Registered? <a href="#">Register</a></p>
@@ -28,7 +28,7 @@
                             <form class="register-form" id="registration-form">
                                 <center><h1 class="main-heading">Registration Form</h1></center>
 				                <input type="text" placeholder="user name" id="new-username" required/>
-				                <input type="text" placeholder="email-id"  required/>
+				                <input type="text" placeholder="email-id" id="new-emailid" required/>
 				                <input type="password" placeholder="password"id="new-password" required/>
 				                <button>REGISTER</button>
 				                <p class="message">Already Registered?<a href="#">Login</a>
@@ -48,7 +48,7 @@
     <script>
      
        $('.message a').click(function(){$('form').animate({height: "toggle",opacity: "toggle"},"slow");});
-       const validUsers = { "siri": "siri", "chandu": "chandu" };
+       const validUsers = { "vasich369@gmail.com": "siri", "nandu@123": "chandu" };
 
 const loginForm = document.getElementById("login-form");
 
@@ -57,11 +57,14 @@ loginForm.addEventListener("submit", function(event) {
 
   const username = document.getElementById("uname").value;
   const password = document.getElementById("password").value;
-
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (emailRegex.test(username.value)) {
+  alert("Email id is invalid")
+} else {
   if (validUsers[username] === password) {
     window.location.href = "./puzzhtml/options/opt.html";
   } else {
-    alert("Invalid username or password. Please try again.");
+   } alert("Invalid username or password. Please try again.");
   }
 });
 
@@ -70,15 +73,20 @@ const registrationForm = document.getElementById("registration-form");
       registrationForm.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        const newUsername = document.getElementById("new-username").value;
+        const newUsername = document.getElementById("new-emailid").value;
         const newPassword = document.getElementById("new-password").value;
-
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (emailRegex.test(newUsername.value)) {
+  alert("Email id is invalid")
+} else {
         validUsers[newUsername] = newPassword;
 
         alert(`User ${newUsername} has been registered with password ${newPassword}.`);
 
         registrationForm.reset();
+}
       });
+  
     </script>
 </body>
 </html>
