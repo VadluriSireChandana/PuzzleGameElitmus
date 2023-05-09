@@ -47,6 +47,7 @@ and the number of hints taken by the user at each step in order to solve a solut
    - Grasping skill
   
 ## Game Link
+(This website is 100% compatible in Laptop/Desktop only)
   This website is available on ----
   - https://elitmusegame.netlify.app/
   - https://vadlurisirechandana.github.io/PuzzleGameElitmus/
