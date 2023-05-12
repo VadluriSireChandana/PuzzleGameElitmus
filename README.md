@@ -74,4 +74,4 @@ The output of softskill analysis:
 
 The output of grasping skills:
 
-![fss1](https://github.com/VadluriSireChandana/PuzzleGameElitmus/commit/93d5f36b710df94cf2ad499bdd9f039f551e4e8f)
+![fss1](https://github.com/VadluriSireChandana/PuzzleGameElitmus/blob/main/Screenshot%20(42).png)
