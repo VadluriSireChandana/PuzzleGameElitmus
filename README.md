@@ -66,3 +66,8 @@ Extract the given folder and run index.html on localhost.
 ![fss1](https://github.com/VadluriSireChandana/PuzzleGameElitmus/blob/main/index.png)
 
 
+The output of softskill analysis:
+![fss1](https://github.com/VadluriSireChandana/PuzzleGameElitmus/blob/main/Screenshot%20(41).png)
+
+
+
