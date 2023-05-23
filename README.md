@@ -63,7 +63,7 @@ Extract the given folder and run index.html on localhost.
 - Minimum 1 solution: Yes
 - User data: Yes(Accuracy of each user at each clue page)
 
-![fss1](https://github.com/VadluriSireChandana/PuzzleGameElitmus/blob/main/index.png)
+![Alt text](https://github.com/VadluriSireChandana/PuzzleGameElitmus/blob/main/index.png)
 
 
 The output of softskill analysis:
